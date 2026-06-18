@@ -1,22 +1,28 @@
-# Multi-Target Web Scrapers Collection 
+# Projetos de Web Scraping e Extração de Dados
 
-Este repositório reúne uma coleção de scripts de **Web Scraping** desenvolvidos em Python. O objetivo principal é extrair, estruturar e armazenar dados de múltiplos alvos na web (HTML e endpoints de APIs JavaScript), utilizando uma abordagem leve, rápida e sem a necessidade de emulação de navegadores pesados.
+Este repositório contém scripts em Python focados em coleta, extração e estruturação de dados de diferentes fontes na web. O objetivo é demonstrar habilidades práticas em manipulação de dados e automação de processos.
 
-Ideal para fins de portfólio, automação de dados e integração de pipelines.
+---
 
-Tecnologias Utilizadas
+## Tecnologias e Bibliotecas Utilizadas
 
-* **Linguagem:** Python 3.x
-* **Extração de Dados:** `Requests` — Requisições HTTP eficientes para páginas estáticas e consumo de APIs internas estruturadas em JavaScript.
-* **Manipulação de Dados:** `Pandas` — Limpeza, transformação e estruturação dos dados coletados.
-* **Gestão Temporal:** `Datetime` — No caso específico evitar coleta em datas que não sejam úteis, API quebra.
+* **Linguagem:** Python
+* **Bibliotecas Principais:**
+  * `pandas`: Manipulação, limpeza e exportação de dados em múltiplos formatos.
+  * `requests`: Realização de requisições HTTP para acessar o conteúdo das páginas.
+  * `BeautifulSoup` (bs4): Parseamento e extração de informações de estruturas HTML.
+  * `feedparser`: Leitura e processamento de feeds RSS.
+  * `datetime` e `json`: Manipulação de dados temporais e geração de arquivos JSON.
 
-## 📂 Estrutura do Repositório
+---
 
-```text
-├── scrapers/
-│   ├── html_sites/         # Scrapers focados na extração de páginas HTML
-│   │   └── exemplo_html.py
-│   └── js_api_sites/       # Scrapers que consomem APIs carregadas via JS
-│       └── exemplo_api.py
-└── README.md
+## Visão Geral dos Scripts
+
+### 1. `coletaa.py` (Raspagem de Páginas Web)
+* **O que faz:** Acessa o site *Resident Evil Database*, extrai dinamicamente as informações e aparições dos personagens, e salva o conjunto de dados em formatos estruturados e otimizados (`.parquet` e `.pkl`).
+
+### 2. `coletab.py` (Extração de Dados Oficiais)
+* **O que faz:** Obtém o arquivo de fechamento diário de cotações de moedas diretamente do Banco Central do Brasil (BCB), seleciona as informações mais relevantes e exporta tudo formatado para uma planilha Excel (`.xlsx`).
+
+### 3. `coletac.py` (Consumo de Feed RSS)
+* **O que faz:** Conecta-se ao feed de notícias do portal *Metrópoles*, coleta o título, resumo, data e link das publicações mais recentes (limpando o texto de resíduos HTML), e armazena os resultados em um arquivo `.json`.
