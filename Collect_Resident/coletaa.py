@@ -58,7 +58,6 @@ def get_links():
     ancoras = (soup_personagens.find("div",class_ = "td-page-content").find_all("a"))
     links = [i["href"] for i in ancoras]
     return links
-# %%
 links = get_links()
 data = []
 for i in tqdm(links):
@@ -67,7 +66,6 @@ for i in tqdm(links):
     nome = i.strip("/").split("/")[-1].replace("-"," ").title()
     d["Nome"] = nome
     data.append(d)
-# %%
 df = pd.DataFrame(data)
 df.to_parquet("dados_re.parquet", index=False)
 df.to_pickle("dados_re.pkl")
