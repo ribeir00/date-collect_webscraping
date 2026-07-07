@@ -26,3 +26,7 @@ Este repositório contém scripts em Python focados em coleta, extração e estr
 
 ### 3. `coletac.py` (Consumo de Feed RSS)
 * **O que faz:** Conecta-se ao feed de notícias do portal *Metrópoles*, coleta o título, resumo, data e link das publicações mais recentes (limpando o texto de resíduos HTML), e armazena os resultados em um arquivo `.json`.
+
+### 4. `coletad.py` (Consumo de Feed RSS, Supabase e Automação de E-mail)
+* **O que faz:** Conecta-se ao feed de notícias do portal *Metrópoles*, coleta o título, resumo, data e link das publicações mais recentes (limpando o texto de resíduos HTML). Os dados são estruturados e exportados como um arquivo `.json` diretamente para o bucket de Storage do **Supabase**.
+* **Automação:** O script é executado diariamente de forma 100% autônoma através do **GitHub Actions** em um horário pré-definido, consolidando um resumo dessas notícias em um layout HTML e realizando o envio automático por e-mail utilizando SMTP seguro.
