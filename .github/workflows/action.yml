@@ -3,7 +3,7 @@ name: Executar Webscraping do Metrópoles
 # 2. Gatilhos de Execução (Quando roda)
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 14 * * *'
   workflow_dispatch:
 
 jobs:
